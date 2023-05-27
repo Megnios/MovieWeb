@@ -36,6 +36,7 @@ namespace MovieWeb.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["Succes"] = "Category created succesfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -65,11 +66,47 @@ namespace MovieWeb.Controllers
             {
                 _db.Update(obj);
                 _db.SaveChanges();
+                TempData["Succes"] = "Category updated succesfully";
                 return RedirectToAction("Index");
             }
             
             return View();
            
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+
+            Category? CategoryFromDb = _db.Categories.FirstOrDefault(c => c.Id == id);
+
+            if (CategoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(CategoryFromDb);
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(int? id)
+        {
+            Category? CategoryFromDb = _db.Categories.Find(id);
+
+            if (CategoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+            _db.Categories.Remove(CategoryFromDb);
+            _db.SaveChanges();
+            TempData["Succes"] = "Category deleted succesfully";
+            return RedirectToAction("Index");
+
         }
 
     }

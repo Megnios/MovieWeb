@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hguDPAoAUyESY0L6L3XR60UK+vBPRbVi67E39caWDbCjKqLjaqH6ZXzDWEJz8+paQFHq0qOI8SquMCp7xz74Gg==",
+  "dgSpecHash": "/LUQm3PVVWhq9fvJY47nFEPNjzRbdaciTebMPQYyVrR4FXdTUjqWzkBTMUqv5UAcJhsiPjsQdut76lkxCcQVUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicol\\Desktop\\Proyecto\\MovieWeb\\MovieWeb\\MovieWeb.csproj",
+  "projectFilePath": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\MovieWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicol\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

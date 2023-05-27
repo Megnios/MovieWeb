@@ -3515,11 +3515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicol\\Desktop\\Proyecto\\MovieWeb\\MovieWeb\\MovieWeb.csproj",
+      "projectUniqueName": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\MovieWeb.csproj",
       "projectName": "MovieWeb",
-      "projectPath": "C:\\Users\\nicol\\Desktop\\Proyecto\\MovieWeb\\MovieWeb\\MovieWeb.csproj",
+      "projectPath": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\MovieWeb.csproj",
       "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicol\\Desktop\\Proyecto\\MovieWeb\\MovieWeb\\obj\\",
+      "outputPath": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieWeb", "MovieWeb\MovieWeb.csproj", "{2A2DC5B9-7B1C-4C9B-B282-D44FF356A8AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesMovieWeb", "RazorPagesMovieWeb\RazorPagesMovieWeb.csproj", "{55236971-A38C-46C0-9284-BD972A311FE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A2DC5B9-7B1C-4C9B-B282-D44FF356A8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2DC5B9-7B1C-4C9B-B282-D44FF356A8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2DC5B9-7B1C-4C9B-B282-D44FF356A8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2DC5B9-7B1C-4C9B-B282-D44FF356A8AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55236971-A38C-46C0-9284-BD972A311FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55236971-A38C-46C0-9284-BD972A311FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55236971-A38C-46C0-9284-BD972A311FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55236971-A38C-46C0-9284-BD972A311FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DF295C9-B57B-4182-BB35-87EF4945133F}
+	EndGlobalSection
+EndGlobal
