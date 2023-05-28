@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis.Differencing;
+using Microsoft.EntityFrameworkCore;
 using MovieWeb.Areas.Admin.Models;
 using MovieWeb.Models;
+using System.Drawing;
+using System.Security.Policy;
 
 namespace MovieWeb.Data
 {
@@ -30,8 +33,9 @@ namespace MovieWeb.Data
                     Rating = 8.2,
                     Director = "Steven Spielberg",
                     ListPrice = 20.33,
-                    CategoryId = 1
-
+                    CategoryId = 12,
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare tortor ligula, nec congue justo vulputate sed. Sed convallis tellus.",
+                    imageUrl = ""
                 },
                 new Product
                 {
@@ -40,7 +44,9 @@ namespace MovieWeb.Data
                     Rating = 8.6,
                     Director = "George Lucas",
                     ListPrice = 25.99,
-                    CategoryId = 2
+                    CategoryId = 6,
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare tortor ligula, nec congue justo vulputate sed. Sed convallis tellus.",
+                    imageUrl = ""
                 },
                 new Product
                 {
@@ -49,9 +55,11 @@ namespace MovieWeb.Data
                     Rating = 7.3,
                     Director = "David Silverman",
                     ListPrice = 10.5,
-                    CategoryId = 3
+                    CategoryId = 1,
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare tortor ligula, nec congue justo vulputate sed. Sed convallis tellus.",
+                    imageUrl = ""
                 }
-                );
+                ); ;
         }
     }
 }

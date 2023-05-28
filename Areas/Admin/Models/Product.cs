@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using MovieWeb.Data;
 using MovieWeb.Models;
 using System.ComponentModel;
@@ -28,8 +29,15 @@ namespace MovieWeb.Areas.Admin.Models
         [Range(1, 1000)]
         public double ListPrice { get; set; }
 
+        [ValidateNever]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
+        [ValidateNever]
         public Category Category { get; set; }
+
+        public string Description { get; set; }
+
+        [ValidateNever]
+        public string imageUrl { get; set; }
     }
 }

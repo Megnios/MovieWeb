@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MovieWeb.Areas.Admin.Models;
+using MovieWeb.Areas.Admin.Models.ViewModels;
 using MovieWeb.Data;
+using System.Collections.Generic;
 
 namespace MovieWeb.Areas.Admin.Controllers
 {
@@ -8,10 +12,12 @@ namespace MovieWeb.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _db;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductController(ApplicationDbContext db)
+        public ProductController(ApplicationDbContext db, IWebHostEnvironment webHostEnvironment)
         {
             _db = db;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -20,59 +26,69 @@ namespace MovieWeb.Areas.Admin.Controllers
 
         }
 
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
-            return View();
+            
+            ProductVM productVm = new()
+            {
+                CategoryList = _db.Categories.ToList().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString(),
+                }),
+                Product = new Product()
+            };
+
+            if (id == null || id == 0)
+            {
+                return View(productVm);
+            }
+            else
+            {
+                productVm.Product = _db.Products.FirstOrDefault(p => p.Id == id);
+                return View(productVm);
+            }
+
+
         }
 
         [HttpPost]
-        public IActionResult Create(Product obj)
-        {
-            if (obj.Name == obj.Director.ToString())
-            {
-                ModelState.AddModelError("name", "Display Order cannot exactly match the Name");
-
-            }
+        public IActionResult Upsert(ProductVM productVm, IFormFile? file)
+        { 
 
             if (ModelState.IsValid)
             {
-                _db.Products.Add(obj);
+                string wwwRootPath = _webHostEnvironment.WebRootPath;
+
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine(wwwRootPath, @"images\product");
+
+                    using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    productVm.Product.imageUrl = @"\images\product" + fileName;
+                }
+
+                _db.Products.Add(productVm.Product);
                 _db.SaveChanges();
                 TempData["Succes"] = "Product created succesfully";
                 return RedirectToAction("Index");
             }
-            return View();
+            else
+            {
+                productVm.CategoryList = _db.Categories.ToList().Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString(),
+                });
+                return View(productVm); 
+            }
         }
 
-        public IActionResult Edit(int? id)
-        {
-            if (id == 0 || id == null)
-            {
-                return NotFound();
-            }
-
-            Product? productFromDb = _db.Products.FirstOrDefault(x => x.Id == id);
-            if (productFromDb == null)
-            {
-                return NotFound();
-            }
-            
-            return View(productFromDb);
-        }
-
-        [HttpPost]
-
-        public IActionResult Edit(Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Products.Update(product);
-                _db.SaveChanges();
-                TempData["Success"] = "Product updated succesfully";
-                return RedirectToAction("Index");
-            }
-            return Index();
-        }
+      
 
         public IActionResult Delete(int? id)
         {
