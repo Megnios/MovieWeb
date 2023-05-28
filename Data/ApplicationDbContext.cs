@@ -29,7 +29,8 @@ namespace MovieWeb.Data
                     Name = "Jurassic Park",
                     Rating = 8.2,
                     Director = "Steven Spielberg",
-                    ListPrice = 20.33
+                    ListPrice = 20.33,
+                    CategoryId = 1
 
                 },
                 new Product
@@ -38,7 +39,8 @@ namespace MovieWeb.Data
                     Name = "Stars Wars",
                     Rating = 8.6,
                     Director = "George Lucas",
-                    ListPrice = 25.99
+                    ListPrice = 25.99,
+                    CategoryId = 2
                 },
                 new Product
                 {
@@ -46,7 +48,8 @@ namespace MovieWeb.Data
                     Name = "The Simpsons",
                     Rating = 7.3,
                     Director = "David Silverman",
-                    ListPrice = 10.5
+                    ListPrice = 10.5,
+                    CategoryId = 3
                 }
                 );
         }
