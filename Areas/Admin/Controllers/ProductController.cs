@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MovieWeb.Areas.Admin.Models;
 using MovieWeb.Areas.Admin.Models.ViewModels;
 using MovieWeb.Data;
+using MovieWeb.Models;
 using System.Collections.Generic;
 
 namespace MovieWeb.Areas.Admin.Controllers
@@ -21,7 +23,8 @@ namespace MovieWeb.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            List<Product> objProductList = _db.Products.ToList();
+
+            List<Product> objProductList = _db.Products.Include(x => x.Category).ToList();
             return View(objProductList);
 
         }
@@ -65,14 +68,34 @@ namespace MovieWeb.Areas.Admin.Controllers
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                     string productPath = Path.Combine(wwwRootPath, @"images\product");
 
+                    if (!string.IsNullOrEmpty(productVm.Product.imageUrl))
+                    {
+                        var oldImage = Path.Combine(wwwRootPath, productVm.Product.imageUrl.TrimStart('\\'));
+
+                        if(System.IO.File.Exists(oldImage))
+                        {
+                            System.IO.File.Delete(oldImage);
+                        }
+
+                    }
+
+
                     using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
                     {
                         file.CopyTo(fileStream);
                     }
-                    productVm.Product.imageUrl = @"\images\product" + fileName;
+                    productVm.Product.imageUrl = @"\images\product\" + fileName;
                 }
 
-                _db.Products.Add(productVm.Product);
+                if (productVm.Product.Id == 0)
+                {
+                    _db.Products.Add(productVm.Product);
+                }
+                else
+                {
+                    _db.Products.Update(productVm.Product);
+                }
+                
                 _db.SaveChanges();
                 TempData["Succes"] = "Product created succesfully";
                 return RedirectToAction("Index");
@@ -129,5 +152,16 @@ namespace MovieWeb.Areas.Admin.Controllers
 
             return Index();
         }
+        #region
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Product> objProductList = _db.Products.Include(x => x.Category).ToList();
+            return Json(new {data = objProductList});
+     
+        }
+
+        #endregion
     }
 }
