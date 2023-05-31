@@ -113,46 +113,47 @@ namespace MovieWeb.Areas.Admin.Controllers
 
       
 
-        public IActionResult Delete(int? id)
-        {
-            if (id == 0 || id == null)
-            {
-                return NotFound();
-            }
+        //public IActionResult Delete(int? id)
+        //{
+        //    if (id == 0 || id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            Product? productFromDb = _db.Products.FirstOrDefault(x => x.Id == id);
+        //    Product? productFromDb = _db.Products.FirstOrDefault(x => x.Id == id);
 
-            if(productFromDb == null)
-            {
-                return NotFound();
-            }
+        //    if(productFromDb == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(productFromDb);
+        //    return View(productFromDb);
             
-        }
+        //}
 
-        [HttpPost]
-        [ActionName("Delete")]
-        public IActionResult DeletePOST(int? id)
-        {
-            Product product = _db.Products.FirstOrDefault(x => x.Id == id);
+        //[HttpPost]
+        //[ActionName("Delete")]
+        //public IActionResult DeletePOST(int? id)
+        //{
+        //    Product product = _db.Products.FirstOrDefault(x => x.Id == id);
 
-            if (product == null)
-            {
-                return NotFound();
-            }
+        //    if (product == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                _db.Remove(product);
-                _db.SaveChanges();
-                TempData["Succes"] = "Product Deleted succesfully";
-                return RedirectToAction("Index");
-            }
+        //    if (ModelState.IsValid)
+        //    {
+        //        _db.Remove(product);
+        //        _db.SaveChanges();
+        //        TempData["Succes"] = "Product Deleted succesfully";
+        //        return RedirectToAction("Index");
+        //    }
 
-            return Index();
-        }
-        #region
+        //    return Index();
+        //}
+
+        #region API CALLS
 
         [HttpGet]
         public IActionResult GetAll()
@@ -161,6 +162,30 @@ namespace MovieWeb.Areas.Admin.Controllers
             return Json(new {data = objProductList});
      
         }
+
+        [HttpDelete]
+        public IActionResult Delete(int? id)
+        {
+            var product = _db.Products.FirstOrDefault(x => x.Id == id);
+            
+            if (product == null)
+            {
+                return Json(new { success = false, message = "Error while deleting" });
+            }
+
+            var oldImage = Path.Combine(_webHostEnvironment.WebRootPath, product.imageUrl.TrimStart('\\'));
+
+            if (System.IO.File.Exists(oldImage))
+            {
+                System.IO.File.Delete(oldImage);
+            }
+
+            _db.Products.Remove(product);
+            _db.SaveChanges();
+
+            return Json(new { success = true, message = "Delete succesfull" });
+        }
+
 
         #endregion
     }

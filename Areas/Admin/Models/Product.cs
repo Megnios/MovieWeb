@@ -5,6 +5,7 @@ using MovieWeb.Models;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MovieWeb.Areas.Admin.Models
 {
@@ -38,6 +39,7 @@ namespace MovieWeb.Areas.Admin.Models
         public string Description { get; set; }
 
         [ValidateNever]
+        [AllowNull]
         public string imageUrl { get; set; }
     }
 }

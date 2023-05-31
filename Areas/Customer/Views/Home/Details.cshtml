@@ -1,0 +1,47 @@
+﻿@model Product
+
+<form method="post">
+    <div class="card shadow border-0 mt-4 mb-4">
+        <div class="card-header bg-secondary bg-gradient text-light py-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="text-black text-uppercase">@Model.Name</h3>
+                    <p class="text-black-50 fw-semibold mb-0">by @Model.Director</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="py-3">
+                <div class="row">
+                    <div class="col-6 col-md-2 offset-lg-1 pb-1">
+                        <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase" style="border-radius:10px";>
+                            <small>Back to home</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
+                        <img src="@Model.imageUrl" width="300px" height="400px" class="rounded" />
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1">
+                        <div class="col-12 col-md-6 pb-4">
+                            <span class="badge bg-warning" style="border-radius:10px";>@Model.Category.Name</span>
+                        </div>
+                        <div class="row pl-2 my-3">
+                            <h6 class="text-dark pb-2">Rating IMDb: @Model.Rating</h6>
+                        </div>
+                        <div class="row pl-2 my-3">
+                            <h6 class="text-dark pb-4">
+                                List Price: @Model.ListPrice.ToString("c")
+                            </h6>
+                        </div>
+                        <div class="row pl-2 my-3">
+                            <p class="text-secondary lh-sm">@Html.Raw(Model.Description)</p>
+
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
