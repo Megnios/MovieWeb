@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "J1cotB0zDx0IAh+2r6myAN63pl5ifo6tHkRjov4+8KM=",
+  "Hash": "PSeID30XJmWi710GtwqraWuDBsimtqkppEi5CsUp9mU=",
   "Source": "MovieWeb",
   "BasePath": "_content/MovieWeb",
   "Mode": "Default",
@@ -85,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\239888b0-ccc7-4474-8dd8-38cdaf094a04.jpg",
+      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\606de6a6-78c3-4c3f-b790-fbb8065e84bc.jpg",
       "SourceId": "MovieWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\",
       "BasePath": "_content/MovieWeb",
-      "RelativePath": "images/product/239888b0-ccc7-4474-8dd8-38cdaf094a04.jpg",
+      "RelativePath": "images/product/606de6a6-78c3-4c3f-b790-fbb8065e84bc.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,15 +99,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\239888b0-ccc7-4474-8dd8-38cdaf094a04.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\product\\606de6a6-78c3-4c3f-b790-fbb8065e84bc.jpg"
     },
     {
-      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\5be0fc5c-ed61-407f-96c3-6e209f610e26.jpg",
+      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\80cbb2d7-c486-44dd-ab92-609dc4df868c.jpg",
       "SourceId": "MovieWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\",
       "BasePath": "_content/MovieWeb",
-      "RelativePath": "images/product/5be0fc5c-ed61-407f-96c3-6e209f610e26.jpg",
+      "RelativePath": "images/product/80cbb2d7-c486-44dd-ab92-609dc4df868c.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,15 +116,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\5be0fc5c-ed61-407f-96c3-6e209f610e26.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\product\\80cbb2d7-c486-44dd-ab92-609dc4df868c.jpg"
     },
     {
-      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\93e5b7fc-1855-41a0-8d08-31a0475d6aeb.png",
+      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\84ff226a-e077-42f7-a94f-1f4bdb67ec51.jpg",
       "SourceId": "MovieWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\",
       "BasePath": "_content/MovieWeb",
-      "RelativePath": "images/product/93e5b7fc-1855-41a0-8d08-31a0475d6aeb.png",
+      "RelativePath": "images/product/84ff226a-e077-42f7-a94f-1f4bdb67ec51.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\93e5b7fc-1855-41a0-8d08-31a0475d6aeb.png"
+      "OriginalItemSpec": "wwwroot\\images\\product\\84ff226a-e077-42f7-a94f-1f4bdb67ec51.jpg"
     },
     {
       "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\97d00ad7-53c6-442b-bdc5-1146bf57254c.jpg",
@@ -153,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\97d00ad7-53c6-442b-bdc5-1146bf57254c.jpg"
     },
     {
+      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\9807f427-7afc-4073-bae3-2465a2a8a5a3.jpg",
+      "SourceId": "MovieWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\",
+      "BasePath": "_content/MovieWeb",
+      "RelativePath": "images/product/9807f427-7afc-4073-bae3-2465a2a8a5a3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\9807f427-7afc-4073-bae3-2465a2a8a5a3.jpg"
+    },
+    {
       "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\9bc79d7d-cc27-4a91-9f52-a533df2e0b86.jpg",
       "SourceId": "MovieWeb",
       "SourceType": "Discovered",
@@ -168,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product\\9bc79d7d-cc27-4a91-9f52-a533df2e0b86.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\c4d5bbce-7e0d-454a-a89d-31e90276ae88.jpg",
+      "SourceId": "MovieWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\",
+      "BasePath": "_content/MovieWeb",
+      "RelativePath": "images/product/c4d5bbce-7e0d-454a-a89d-31e90276ae88.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\c4d5bbce-7e0d-454a-a89d-31e90276ae88.jpg"
     },
     {
       "Identity": "C:\\Users\\nicol\\Downloads\\MovieWeb\\MovieWeb\\wwwroot\\images\\product\\d68ca8ac-30a8-4ba3-be30-054d95ffb97c.jpg",

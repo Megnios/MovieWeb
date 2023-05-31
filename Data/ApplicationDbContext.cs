@@ -5,6 +5,7 @@ using MovieWeb.Models;
 using System.Drawing;
 using System.Security.Policy;
 
+
 namespace MovieWeb.Data
 {
     public class ApplicationDbContext : DbContext
